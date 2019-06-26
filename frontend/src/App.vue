@@ -1,38 +1,41 @@
 <template>
-  <v-app>
-    <v-toolbar app>
-      <v-toolbar-title class="headline text-uppercase">
-        <span>Vuetify</span>
-        <span class="font-weight-light">MATERIAL DESIGN</span>
-      </v-toolbar-title>
-      <v-spacer></v-spacer>
-      <v-btn
-        flat
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-      >
-        <span class="mr-2">Latest</span>
+  <div id="appRoot">
+    <v-snackbar :timeout="snackbar.color == 'red' ? 30000 : 9000" bottom multi-line :color="snackbar.color" v-model="snackbar.show">{{ snackbar.text }}
+      <v-btn dark flat @click.native="snackbar.show = false" icon> 
+        <v-icon>close</v-icon>
       </v-btn>
-    </v-toolbar>
-
-    <v-content>
-      <HelloWorld/>
-    </v-content>
-  </v-app>
+    </v-snackbar>
+    <template v-if="!$route.meta.requiresAuth">
+      <v-app id="inspire" class="app">
+        <router-view></router-view>
+      </v-app>
+    </template>
+    <template v-else>
+      <dialog-confirmacao ref="dialog_confirm" />
+      <Home/>
+    </template>
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld'
+
+import {mapState} from 'vuex';
+import DialogConfirmacao from './components/dialogs/DialogConfirmacao';
+import Home from './views/Home';
 
 export default {
   name: 'App',
-  components: {
-    HelloWorld
+  computed: {
+    ...mapState({
+      snackbar: 'snackbar'
+    })
   },
-  data () {
-    return {
-      //
-    }
+  components: {
+    Home,
+    DialogConfirmacao  
+  },
+  mounted(){
+    this.$root.$confirmacao = this.$refs.dialog_confirm;
   }
 }
 </script>
