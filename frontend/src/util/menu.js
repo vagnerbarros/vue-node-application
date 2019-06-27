@@ -8,19 +8,14 @@ const Menu =  [
     path: '/home',
     nivel: 1
   },
-  { cabecalho: 'Gerencial', nivel: 1 },
+  { cabecalho: 'Group Menu', nivel: 1 },
   {
-    titulo: 'Cadastros',
-    grupo: 'Cadastros',
-    nome: 'Gerencial',
+    titulo: 'Manage',
+    grupo: 'Manages',
+    nome: 'Manage',
     icone: 'store',
     items: [
-      { nome: 'Empresa', titulo: 'Empresas', path: '/empresas', icone: 'domain', grupo: 'Cadastros', nivel: 1 },
-      { nome: 'Clientes/Fornecedores', titulo: 'Clientes/Fornecedores', path: '/participantes', icone: 'people_outline', grupo: 'Cadastros', nivel: 1 },
-      { nome: 'Tabela', titulo: 'Tabelas', icone: 'table_chart', grupo: 'Cadastros', items: [
-          { nome: 'Conta Corrente', titulo: 'Conta Corrente', path: '/contas', icone: 'monetization_on', grupo: 'Tabelas', nivel: 1 },
-          { nome: 'Banco', titulo: 'Bancos', path: '/bancos', icone: 'account_balance', grupo: 'Tabelas', nivel: 1 }
-      ] }
+      { nome: 'Clients', titulo: 'Clients', path: '/clients', icone: 'people_outline', grupo: 'Manage', nivel: 1 },
     ],
     nivel: 1
   }

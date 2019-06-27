@@ -2,9 +2,7 @@
   <v-layout row class="align-center layout px-4 pt-4 app--page-header">
     <v-breadcrumbs divider="-">
       <v-icon>home</v-icon>
-      <v-breadcrumbs-item v-for="(item,key) in breadcrumbs" :key="key">
-      {{ item }}
-      </v-breadcrumbs-item>
+      <v-breadcrumbs-item v-for="(item,key) in breadcrumbs" :key="key">{{ item }}</v-breadcrumbs-item>
     </v-breadcrumbs>
   </v-layout>  
 </template>

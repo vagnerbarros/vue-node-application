@@ -5,13 +5,13 @@ import axios from '@/util/axios';
 import moment from 'moment';
 import constantes from '@/util/constantes';
 
-import dashboard from './modules/dashboard';
+import client from './modules/client';
 
 Vue.use(Vuex);
 
 export default new Vuex.Store({
   modules: {
-    dashboard
+    client
   },
 
   state: {

@@ -21,29 +21,7 @@
                 </v-list-tile-content>
               </v-list-tile>
               <template v-for="(subItem, i) in item.items">
-                <v-list-group v-if="subItem.items" :key="subItem.nome" :group="item.grupo" :prepend-icon="item.icone" :no-action="true">
-                  <v-list-tile slot="activator" ripple="ripple">
-                    <v-list-tile-content>
-                      <v-list-tile-title>{{ subItem.titulo }}</v-list-tile-title>
-                    </v-list-tile-content>
-                  </v-list-tile>
-                  <template v-for="(child, i) in subItem.items">
-                    <v-list-tile :key="i" ripple="ripple" @click="mudarRota(child.path)">
-                      <v-list-tile-content>
-                        <v-list-tile-title><span>{{ child.titulo }}</span></v-list-tile-title>
-                      </v-list-tile-content>
-                    </v-list-tile>
-                  </template>
-                </v-list-group>
-                <v-list-tile v-else-if="subItem.path" :key="i" ripple="ripple" @click="mudarRota(subItem.path)">
-                  <v-list-tile-action v-if="subItem.icone">
-                    <v-icon>{{ subItem.icone }}</v-icon>
-                  </v-list-tile-action>
-                  <v-list-tile-content>
-                    <v-list-tile-title><span>{{ subItem.titulo }}</span></v-list-tile-title>
-                  </v-list-tile-content>
-                </v-list-tile>
-                <v-list-tile v-else :key="i" ripple="ripple" @click="executeCallback(subItem.acao)">
+                <v-list-tile v-if="subItem.path" :key="i" ripple="ripple" @click="mudarRota(subItem.path)">
                   <v-list-tile-action v-if="subItem.icone">
                     <v-icon>{{ subItem.icone }}</v-icon>
                   </v-list-tile-action>
