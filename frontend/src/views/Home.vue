@@ -8,7 +8,7 @@
           <router-view></router-view>
         </div>   
         <v-footer height="auto" class="white pa-3 app--footer">
-          <span class="caption">&copy; {{ new Date().getFullYear()}} Anron Software - Todos direitos reservados</span>
+          <span class="caption">&copy; {{ new Date().getFullYear()}} Frontend + Backend - Initial Skeleton</span>
         </v-footer>
       </v-content>
       <app-fab></app-fab>
@@ -54,28 +54,7 @@ export default {
 
     itemsAcessiveis(){
       
-      let usuario = this.$store.state.user;
-      if(usuario){
-
-        if(usuario.nivel_acesso === 'NORMAL'){
-          let elementos = [];
-          this.items.forEach(elemento => {
-            if(elemento.nivel === 1){
-              elementos.push(elemento);
-            }
-          });
-          return elementos;
-        }
-        else if(usuario.nivel_acesso === 'ADMINISTRADOR'){
-          let elementos = [];
-          this.items.forEach(elemento => {
-            if(elemento.nivel === 1 || elemento.nivel === 2){
-              elementos.push(elemento);
-            }
-          });
-          return elementos;
-        }
-      }
+      return [];
     }
   },
 

@@ -1,10 +1,9 @@
 <template>
   <v-navigation-drawer id="appDrawer" persistent :mini-variant="mini" :clipped="clipped" fixed :dark="$vuetify.dark" app v-model="drawer" enable-resize-watcher width="260">
-  <dialog-inutilizacao :dialog="mostrarInutilizarIntervalo" @fechar="mostrarInutilizarIntervalo = false" @inutilizar="inutilizar"></dialog-inutilizacao>
     <v-toolbar color="primary darken-1" dark @click="mudarRota('/home')" style="cursor: pointer">
-      <img v-bind:src="definirLogo" height="36">
+      <img v-bind:src="require('@/assets/vuetify.png')" height="36">
       <v-toolbar-title class="ml-0 pl-3">
-        <span class="hidden-sm-and-down">Anron Software</span>
+        <span class="hidden-sm-and-down">Vuetify</span>
       </v-toolbar-title>        
     </v-toolbar>
     <vue-perfect-scrollbar class="drawer-menu--scroll" :settings="scrollSettings">
@@ -74,6 +73,7 @@
 <script>
 import menu from '@/util/menu';
 import VuePerfectScrollbar from 'vue-perfect-scrollbar';
+import constants from '@/util/constantes';
 
 export default {
   name: 'app-drawer',
@@ -88,7 +88,6 @@ export default {
   },
   data() {
     return {
-      mostrarInutilizarIntervalo: false,
       mini: false,
       drawer: true,
       fixed: true,
@@ -109,13 +108,8 @@ export default {
       return this.$vuetify.options.extra.sideNav;
     },
 
-    definirLogo(){
-      let empresa = this.$store.state.empresaAtual;
-      return empresa.logotipo;
-    },
-    
     menusAcessiveis(){
-      return this.menus;
+      return this.menu;
     }
   },
 

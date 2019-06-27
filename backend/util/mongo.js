@@ -1,16 +1,8 @@
-const mongoose = require('mongoose');
 const constants = require('./constants');
+var mongoose = require('mongoose');
 
-module.exports = () => {
-  const connect = () => {
-    mongoose.Promise = global.Promise
-    
-    mongoose.connect(constants.URL_MONGO, constants.MONGO_OPTIONS);
-    mongoose.set('useCreateIndex', true);
-    mongoose.set('useFindAndModify', false);
-  }
-
-  connect();
-
-  mongoose.connection.on('disconnected', connect)
-}
+//conexao mongoose
+mongoose.connect(constants.URL_MONGO, constants.MONGO_OPTIONS);
+mongoose.Promise = global.Promise;
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'MongoDB connection error:'));

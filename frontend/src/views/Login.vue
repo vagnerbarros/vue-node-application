@@ -16,7 +16,7 @@
                 </v-form>
               </v-card-text>
               <v-card-actions>
-                <v-btn block color="primary" @click="validate(usuario)" :loading="loading">Login</v-btn>
+                <v-btn block color="primary" @click="validate(user)" :loading="loading">Login</v-btn>
               </v-card-actions>
             </v-card>
           </v-flex>
@@ -60,11 +60,11 @@ export default {
       }
     },
 
-    login(usuario) {
+    login(user) {
       
       this.loading = true;
 
-      let userLogin = Object.assign({}, this.usuario);
+      let userLogin = Object.assign({}, this.user);
 
       axios.post("/login", userLogin)
         .then(response => {
