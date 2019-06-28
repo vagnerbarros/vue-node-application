@@ -8,19 +8,19 @@
               <v-container>
                 <v-layout row wrap>
                   <v-flex xs12 sm6>
-                    <v-text-field label="First Name" v-model="client.firstName" :rules="firstName"></v-text-field>
+                    <v-text-field label="First Name" v-model="client.firstName" :rules="firstName" data-cy="firstName"></v-text-field>
                   </v-flex>
                   <v-flex xs12 sm6>
-                    <v-text-field label="Last Name" v-model="client.lastName" :rules="lastName"></v-text-field>
+                    <v-text-field label="Last Name" v-model="client.lastName" :rules="lastName" data-cy="lastName"></v-text-field>
                   </v-flex>
                   <v-flex xs12 sm12>
-                    <v-text-field label="Adress" v-model="client.adress" :rules="adress"></v-text-field>
+                    <v-text-field label="Adress" v-model="client.adress" :rules="adress" data-cy="adress"></v-text-field>
                   </v-flex>
                   <v-flex xs12 sm8>
-                    <v-text-field label="City" v-model="client.city" :rules="city"></v-text-field>
+                    <v-text-field label="City" v-model="client.city" :rules="city" data-cy="city"></v-text-field>
                   </v-flex>
                   <v-flex xs12 sm4>
-                    <v-text-field label="State" v-model="client.state" :rules="state"></v-text-field>
+                    <v-text-field label="State" v-model="client.state" :rules="state" data-cy="state"></v-text-field>
                   </v-flex>
                 </v-layout>
               </v-container>
@@ -30,7 +30,7 @@
       </v-layout>
       <v-layout justify-end>
         <v-btn @click="cancel()">Cancel</v-btn>    
-        <v-btn color="primary" :loading="loading" @click="send()" :disabled="!valid">Save</v-btn>
+        <v-btn color="primary" :loading="loading" @click="send()" :disabled="!valid" data-cy="save">Save</v-btn>
       </v-layout>
     </v-container>
 
