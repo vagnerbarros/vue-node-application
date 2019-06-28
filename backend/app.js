@@ -12,7 +12,9 @@ app.use(bodyParser.json({limit : '50mb'}));
 app.use(cors());
 
 const userRouter = require('./routes/UserRouter');
+const clientRouter = require('./routes/ClientRouter');
 
 app.use(userRouter);
+app.use(clientRouter);
 
 app.listen(constants.PORT_EXPRESS);

@@ -8,12 +8,12 @@ function verificarToken(request, response, next){
         return response.status(403).send({ sucesso : false, msg: 'Token not found'});
     }
     else{
-        jwt.verify(token, constants.JWT_SECRET, function(err, decodificado){
+        jwt.verify(token, constants.JWT_SECRET, function(err, decoded){
             if(err){
                 return response.status(500).send({ sucesso: false, msg: 'Invalid Token'});
             }
             else{
-                request.idUsuario = decodificado.id;
+                request.userId = decoded.id;
                 next();
             }
         });

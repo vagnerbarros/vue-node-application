@@ -51,7 +51,6 @@
 <script>
 import menu from '@/util/menu';
 import VuePerfectScrollbar from 'vue-perfect-scrollbar';
-import constants from '@/util/constantes';
 
 export default {
   name: 'app-drawer',

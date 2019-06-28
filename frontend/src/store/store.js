@@ -1,10 +1,6 @@
 import Vuex from "vuex";
 import Vue from "vue";
 
-import axios from '@/util/axios';
-import moment from 'moment';
-import constantes from '@/util/constantes';
-
 import client from './modules/client';
 
 Vue.use(Vuex);
@@ -24,7 +20,7 @@ export default new Vuex.Store({
     snackbar: {
       show: false,
       text: '',
-      color: '',
+      color: 'primary',
     },
     carregando: false,
   },
@@ -63,14 +59,14 @@ export default new Vuex.Store({
     setCarregando(state, valor){
       state.carregando = valor;
     },
-    setMensagemErro(state, mens){
+    setErrorText(state, mens){
       state.snackbar.text = mens;
       state.snackbar.color = 'red';
       state.snackbar.show = true;
     },
-    setMensagemSucesso(state, mens){
+    setSucessText(state, mens){
       state.snackbar.text = mens;
-      state.snackbar.color = 'green';
+      state.snackbar.color = 'primary';
       state.snackbar.show = true;
     }
   }

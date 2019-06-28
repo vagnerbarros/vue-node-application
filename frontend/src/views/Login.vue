@@ -76,12 +76,13 @@ export default {
             email: response.data.email
           });
 
+          this.$store.commit('setSucessText', 'Welcome ' + response.data.name);
           this.$router.replace({ path: "/home" });
         })
         .catch(erro => {
 
           localStorage.removeItem("token");
-          this.$store.commit('setMensagemErro', erro.response.data.motivo);
+          this.$store.commit('setErrorText', erro.response.data.motivo);
         })
         .then(() => {
           this.carregando = false;

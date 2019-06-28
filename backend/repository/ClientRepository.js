@@ -1,5 +1,4 @@
 var Client = require('../schemas/ClientSchema');
-var constantes = require('../util/constants');
 
 class ClientRepository{
 
