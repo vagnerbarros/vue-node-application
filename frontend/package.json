@@ -6,6 +6,7 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "test:e2e": "vue-cli-service test:e2e",
+    "test:e2e-record": "vue-cli-service test:e2e --headless --record --key 488c10b6-098e-462d-b68d-dd85a09ee403",
     "test:unit": "vue-cli-service test:unit"
   },
   "dependencies": {
