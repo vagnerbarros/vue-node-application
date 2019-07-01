@@ -1,25 +1,61 @@
-// ***********************************************
-// This example commands.js shows you how to
-// create various custom commands and overwrite
-// existing commands.
-//
-// For more comprehensive examples of custom
-// commands please read more here:
-// https://on.cypress.io/custom-commands
-// ***********************************************
-//
-//
-// -- This is a parent command --
-// Cypress.Commands.add("login", (email, password) => { ... })
-//
-//
-// -- This is a child command --
-// Cypress.Commands.add("drag", { prevSubject: 'element'}, (subject, options) => { ... })
-//
-//
-// -- This is a dual command --
-// Cypress.Commands.add("dismiss", { prevSubject: 'optional'}, (subject, options) => { ... })
-//
-//
-// -- This is will overwrite an existing command --
-// Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
+Cypress.Commands.add("login", () => {
+    
+    const credential = {
+        email: 'vagner@gmail.com',
+        password: '123'
+    }
+    
+    cy.request({
+        method: 'POST',
+        url: 'http://localhost:5000/login',
+        body: {            
+            email: credential.email,
+            password: credential.password
+        }
+    })
+    .then((resp) => {
+        window.localStorage.setItem('token', resp.body.token);
+
+        let user = {
+            name: resp.body.name,
+            email: credential.email
+        }
+        window.localStorage.setItem('user', JSON.stringify(user));
+    })
+});
+
+Cypress.Commands.add('removeclients', () => {
+    
+    cy.login();
+    
+    cy.window().then(window => {
+        
+        let token = window.localStorage.getItem('token');
+        cy.request({
+            headers: {
+                'x-acess-token': token
+            },
+            method: 'GET',
+            url: 'http://localhost:5000/clients',
+            body: {}
+        })
+        .then((resp) => {
+            let clients = resp.body;
+            for(let client of clients){
+                cy.request({
+                    headers: {
+                        'x-acess-token': token
+                    },
+                    method: 'DELETE',
+                    url: 'http://localhost:5000/clients',
+                    body: {
+                        '_id': client._id
+                    }
+                })
+                .then((result) => {
+                    expect(result.body._id).to.equal(client._id);
+                })
+            }
+        })
+    })
+});

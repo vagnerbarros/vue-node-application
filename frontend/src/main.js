@@ -8,8 +8,12 @@ import 'font-awesome/css/font-awesome.css';
 
 Vue.config.productionTip = false
 
-new Vue({
+const app = new Vue({
   router,
   store,
   render: h => h(App)
-}).$mount('#app')
+}).$mount('#app');
+
+if(window.Cypress){
+  window.app = app;
+}

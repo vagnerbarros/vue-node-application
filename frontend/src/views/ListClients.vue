@@ -13,8 +13,8 @@
           <td>{{ props.item.city }}</td>
           <td>{{ props.item.state }}</td>
           <td class="justify-center layout px-0">
-            <v-icon class="mr-2" @click="editClient({client : props.item, router : $router})">edit</v-icon>
-            <v-icon @click="remove(props.item)">delete</v-icon>
+            <v-icon class="mr-2" @click="editClient({client : props.item, router : $router})" data-cy="edit">edit</v-icon>
+            <v-icon @click="remove(props.item)" data-cy="remove">delete</v-icon>
           </td>
         </template>
         </v-data-table>

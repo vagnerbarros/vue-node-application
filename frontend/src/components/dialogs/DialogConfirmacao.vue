@@ -8,7 +8,7 @@
       <v-card-actions class="pt-0">
         <v-spacer></v-spacer>
         <v-btn color="grey" flat="flat" @click.native="nao">Não</v-btn>
-        <v-btn color="primary darken-1" flat="flat" @click.native="sim">Sim</v-btn>
+        <v-btn color="primary darken-1" flat="flat" @click.native="sim" data-cy="confirm">Sim</v-btn>
       </v-card-actions>
     </v-card>
   </v-dialog>

@@ -44,7 +44,7 @@ export default{
             
             commit('setLoading', true);
             let client = Object.assign({}, state.currentClient);
-            if(state.isEditing){
+            if(state.editMode){
                 axios.put('/clients', client)
                 .then((response) => {
                     let result = response.data;
