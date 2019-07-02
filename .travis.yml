@@ -1,9 +1,18 @@
-dist: xenial
 language: node_js
 node_js:
-  - '8'
+  - '10'
 cache:
   npm: true
-before_script:
-  - cd backend
-  - npm install
+jobs:
+  include:
+    - stage: Test Backend
+      before_script:
+        - cd backend
+        - npm install
+      script:
+        - npm test
+    - stage: Build Frontend
+      before_script:
+        - cd frontend
+      script:
+        - npm run serve
