@@ -1,5 +1,5 @@
 describe('Test the login page', () => {
-  it('Visits the app root url', () => {
+  it('Login', () => {
     cy.visit('/');
     cy.get('input[aria-label=E-Mail]').type('vagner@gmail.com');
     cy.get('input[aria-label=Password]').type('123');
