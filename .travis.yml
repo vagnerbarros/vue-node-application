@@ -6,3 +6,4 @@ cache:
   npm: true
 before_script:
   - cd backend
+  - npm install
