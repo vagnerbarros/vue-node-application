@@ -7,7 +7,7 @@ Cypress.Commands.add("login", () => {
     
     cy.request({
         method: 'POST',
-        url: 'http://localhost:5000/login',
+        url: Cypress.env('URL_API') + '/login',
         body: {            
             email: credential.email,
             password: credential.password
@@ -36,7 +36,7 @@ Cypress.Commands.add('removeclients', () => {
                 'x-acess-token': token
             },
             method: 'GET',
-            url: 'http://localhost:5000/clients',
+            url: Cypress.env('URL_API') + '/clients',
             body: {}
         })
         .then((resp) => {
@@ -47,7 +47,7 @@ Cypress.Commands.add('removeclients', () => {
                         'x-acess-token': token
                     },
                     method: 'DELETE',
-                    url: 'http://localhost:5000/clients',
+                    url: Cypress.env('URL_API') + '/clients',
                     body: {
                         '_id': client._id
                     }
