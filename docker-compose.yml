@@ -10,7 +10,7 @@ services:
     depends_on:
       - backend
     networks:
-      - webnet
+      - webnet2
 
   backend:
     image: test-backend:1.0
@@ -19,6 +19,6 @@ services:
     ports:
       - "7000:7000"
     networks:
-      - webnet
+      - webnet2
 networks:
-  webnet:
+  webnet2:
