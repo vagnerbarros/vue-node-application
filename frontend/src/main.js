@@ -3,7 +3,6 @@ import './plugins/vuetify';
 import App from './App.vue';
 import router from './router/router';
 import store from './store/store';
-import './registerServiceWorker';
 import 'font-awesome/css/font-awesome.css';
 
 Vue.config.productionTip = false

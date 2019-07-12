@@ -2,6 +2,6 @@
   "pluginsFile": "tests/e2e/plugins/index.js",
   "projectId": "2u1eyi",
   "env": {
-    "URL_API": "http://localhost:5000"
+    "URL_API": "http://localhost:7000"
   }
 }

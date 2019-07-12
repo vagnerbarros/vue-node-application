@@ -6,7 +6,7 @@ services:
     build: ./frontend
     container_name: test-frontend
     ports:
-      - "8080:8080"
+      - "8080:80"
     depends_on:
       - backend
     networks:
