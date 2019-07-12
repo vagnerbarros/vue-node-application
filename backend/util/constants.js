@@ -1,6 +1,6 @@
 let URL_MONGO = '';
 let MONGO_OPTIONS = {};
-let PORT_EXPRESS = 5000;
+let PORT_EXPRESS = 7000;
 let JWT_SECRET = 'VuejsVuetifywithNodejsMongodb';
 let EXPIRATION_TIME = 86400; // 1 day in seconds
 let USER_MONGO = 'git-hub';

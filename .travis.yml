@@ -1,0 +1,18 @@
+language: node_js
+node_js:
+  - '10'
+cache:
+  npm: true
+jobs:
+  include:
+    - stage: Test Backend
+      before_script:
+        - cd backend
+        - npm install
+      script:
+        - npm test
+    - stage: Build Frontend
+      before_script:
+        - cd frontend
+      script:
+        - npm run serve
