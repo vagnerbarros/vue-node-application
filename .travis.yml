@@ -14,5 +14,6 @@ jobs:
     - stage: Build Frontend
       before_script:
         - cd frontend
+        - npm install
       script:
         - npm run serve
