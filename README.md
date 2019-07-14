@@ -19,6 +19,17 @@ If I could contribute in any way and you want to help me, buy me a coffee. :coff
 -   Docker
 -   Docker Composer
 
+## Demo Page
+
+<a href="http://ec2-18-231-183-249.sa-east-1.compute.amazonaws.com:8080">Visit Demo Page</a>
+
+### Login
+
+```bash
+email: vagner@gmail.com
+password: 123
+```
+
 ## How to install
 
 ### Using Git (recommended)
@@ -40,14 +51,6 @@ git clone https://github.com/vagnerbarros/vue-node-application.git
 cd vue-node-application
 docker-compose up
 ```
-
-### Login
-
-```bash
-email: vagner@gmail.com
-password: 123
-```
-
 ## License
 
 This project is open-sourced software licensed under the MIT License. See the LICENSE file for more information.
