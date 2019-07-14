@@ -41,6 +41,11 @@ cd vue-node-application
 docker-compose up
 ```
 
+### Login
+
+email: vagner@gmail.com
+password: 123
+
 ## License
 
 This project is open-sourced software licensed under the MIT License. See the LICENSE file for more information.
