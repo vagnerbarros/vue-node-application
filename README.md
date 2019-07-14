@@ -21,7 +21,7 @@ If I could contribute in any way and you want to help me, buy me a coffee. :coff
 
 ## Demo Page
 
-<a href="http://ec2-18-231-183-249.sa-east-1.compute.amazonaws.com:8080" target="_blank" rel=”noopener”>Visit Demo Page</a>
+<a href="http://ec2-18-231-183-249.sa-east-1.compute.amazonaws.com:8080" Target=”_blank” rel=”noopener”>Visit Demo Page</a>
 
 ### Login
 
