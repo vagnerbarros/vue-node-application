@@ -43,8 +43,10 @@ docker-compose up
 
 ### Login
 
+```bash
 email: vagner@gmail.com
 password: 123
+```
 
 ## License
 
