@@ -5,7 +5,7 @@ import router from './router/router';
 import store from './store/store';
 import 'font-awesome/css/font-awesome.css';
 
-Vue.config.productionTip = false
+Vue.config.productionTip = false;
 
 const app = new Vue({
   router,

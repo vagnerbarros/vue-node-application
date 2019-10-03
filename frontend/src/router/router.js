@@ -1,6 +1,6 @@
-import Vue from 'vue'
+import Vue from 'vue';
 import store from '@/store/store';
-import Router from 'vue-router'
+import Router from 'vue-router';
 
 import Login from '@/views/Login';
 import Dashboard from '@/views/Dashboard';
@@ -8,7 +8,7 @@ import Sair from '@/views/Sair';
 import ListClients from '@/views/ListClients';
 import ClientForm from '@/views/ClientForm';
 
-Vue.use(Router)
+Vue.use(Router);
 
 const router = new Router({
   routes: [

@@ -16,24 +16,24 @@
 
 <script>
 
-  export default {
-    data () {
-      return {
+export default {
+  data () {
+    return {
         
-      }
-    },
+    };
+  },
 
-    computed: {
+  computed: {
         
-    },
+  },
 
-    methods: {
-        logout(){
-            this.$store.commit('logout', {router: this.$router});
-        },
-        home(){
-            this.$router.push('/home');
-        }
+  methods: {
+    logout(){
+      this.$store.commit('logout', {router: this.$router});
+    },
+    home(){
+      this.$router.push('/home');
     }
   }
+};
 </script>

@@ -39,13 +39,13 @@ export default {
                       text: name,
                       disabled: isCurrentRoute,
                       href: path
-                    }
+                    };
                     breadcrumbs.push(element);
                     counter++;
                   }
                 });
               }
-            })
+            });
           }
         }
       });

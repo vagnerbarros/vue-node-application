@@ -6,18 +6,18 @@ let clientData = {
   adress: 'Av. Ag. Magalhães',
   city: 'Caruaru',
   state: 'PE'
-}
+};
 
 describe('Test Client', () => {
 
   before(() => {
     cy.removeclients();
-  })
+  });
 
   it('Save a new client', () => {
 
     cy.login();
-    cy.visit('#/home')
+    cy.visit('#/home');
     cy.get('.v-list__group').click();
     cy.get('.v-list__group__items > [role="listitem"] > .v-list__tile > .v-list__tile__content').click();
     cy.url().should('include', '/clients');
@@ -44,10 +44,10 @@ describe('Test Client', () => {
     clientData.lastName = 'Software';
     clientData.adress = 'Endereço de Santa Cruz';
     clientData.city = 'Santa Cruz do Capibaribe';
-    clientData.state = 'PE2'
+    clientData.state = 'PE2';
     
     cy.login();
-    cy.visit('#/home')
+    cy.visit('#/home');
     cy.get('.v-list__group').click();
     cy.get('.v-list__group__items > [role="listitem"] > .v-list__tile > .v-list__tile__content').click();
     cy.url().should('include', '/clients');
@@ -62,7 +62,7 @@ describe('Test Client', () => {
     getStore().then((store) => {
       let client = store.state.client.clients[0];
       for(let key in clientData){
-        expect(client[key]).to.equal(clientData[key])
+        expect(client[key]).to.equal(clientData[key]);
       }
     });
   });
@@ -79,5 +79,5 @@ describe('Test Client', () => {
 
     getStore().its('state.client.clients').should('have.length', 0);
   });
-})
+});
   

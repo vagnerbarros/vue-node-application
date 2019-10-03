@@ -30,7 +30,7 @@
 import {mapState} from 'vuex';
 
 import moment from 'moment';
-import axios from "@/util/axios";
+import axios from '@/util/axios';
 import colors from 'vuetify/es5/util/colors';
 import validador from '@/util/validador';
 
@@ -38,8 +38,8 @@ export default {
   data() {
     return {
       valid: false,
-      validateEmail: [v => !!v || "Fill E-Mail", v => (v && validador.email(v)) || 'Invalid E-mail'],
-      validatePassword: [v => !!v || "Fill Password"],
+      validateEmail: [v => !!v || 'Fill E-Mail', v => (v && validador.email(v)) || 'Invalid E-mail'],
+      validatePassword: [v => !!v || 'Fill Password'],
       user: {
         email: '',
         password: ''
@@ -66,22 +66,22 @@ export default {
 
       let userLogin = Object.assign({}, this.user);
 
-      axios.post("/login", userLogin)
+      axios.post('/login', userLogin)
         .then(response => {
 
-          localStorage.setItem("token", response.data.token);
+          localStorage.setItem('token', response.data.token);
           
-          this.$store.commit("setUser", {
+          this.$store.commit('setUser', {
             name: response.data.name,
             email: response.data.email
           });
 
           this.$store.commit('setSucessText', 'Welcome ' + response.data.name);
-          this.$router.replace({ path: "/home" });
+          this.$router.replace({ path: '/home' });
         })
         .catch(erro => {
 
-          localStorage.removeItem("token");
+          localStorage.removeItem('token');
           this.$store.commit('setErrorText', erro.response.data.motivo);
         })
         .then(() => {

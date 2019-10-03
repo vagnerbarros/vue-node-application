@@ -40,7 +40,7 @@
 
 <script>
 
-import {mapState, mapGetters, mapActions} from "vuex";
+import {mapState, mapGetters, mapActions} from 'vuex';
 import VWidget from '../components/VWidget';
 
 export default {
@@ -52,11 +52,11 @@ export default {
   data: () => ({
 
     valid: false,
-    firstName: [v => !!v || "First Name is Required"],
-    lastName: [v => !!v || "Last Name is Required"],
-    adress: [v => !!v || "Adress is Required"],
-    city: [v => !!v || "City is Required"],
-    state: [v => !!v || "State is Required"],
+    firstName: [v => !!v || 'First Name is Required'],
+    lastName: [v => !!v || 'Last Name is Required'],
+    adress: [v => !!v || 'Adress is Required'],
+    city: [v => !!v || 'City is Required'],
+    state: [v => !!v || 'State is Required'],
   }),
 
   computed: {

@@ -1,10 +1,10 @@
 <template>
-  <v-navigation-drawer id="appDrawer" persistent :mini-variant="mini" :clipped="clipped" fixed :dark="$vuetify.dark" app v-model="drawer" enable-resize-watcher width="260">
+  <v-navigation-drawer persistent :mini-variant="mini" :clipped="clipped" fixed :dark="$vuetify.dark" app v-model="drawer" enable-resize-watcher width="260">
     <v-toolbar color="primary darken-1" dark @click="mudarRota('/home')" style="cursor: pointer">
       <img v-bind:src="require('@/assets/vuetify.png')" height="36">
       <v-toolbar-title class="ml-0 pl-3">
         <span class="hidden-sm-and-down">Vuetify</span>
-      </v-toolbar-title>        
+      </v-toolbar-title>
     </v-toolbar>
     <vue-perfect-scrollbar class="drawer-menu--scroll" :settings="scrollSettings">
       <v-list dense expand>
@@ -73,7 +73,7 @@ export default {
       scrollSettings: {
         maxScrollbarLength: 160
       }    
-    }
+    };
   },
   computed: {
 
@@ -109,15 +109,3 @@ export default {
   }
 };
 </script>
-
-
-<style lang="stylus">
-// @import '../../node_modules/vuetify/src/stylus/settings/_elevations.styl';
-
-#appDrawer
-  overflow: hidden
-  .drawer-menu--scroll
-    height: calc(100vh - 48px)
-    overflow: auto
-
-</style>

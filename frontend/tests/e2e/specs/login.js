@@ -5,5 +5,5 @@ describe('Test the login page', () => {
     cy.get('input[aria-label=Password]').type('123');
     cy.get('button').click();
     cy.url().should('include', '/home');
-  })
+  });
 });

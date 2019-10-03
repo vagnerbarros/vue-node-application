@@ -25,49 +25,49 @@
 
 <script>
 
-  import {mapState, mapGetters, mapActions} from 'vuex';
+import {mapState, mapGetters, mapActions} from 'vuex';
 
-  export default {
-    data () {
-      return {
-        headers: [
-          { text: 'First Name', value: 'firstName' },
-          { text: 'Last Name', value: 'lastName' },
-          { text: 'City', value: 'city' },
-          { text: 'State', value: 'state' },
-          { text: 'Actions', value: 'name', align:'center',  sortable: false }
-        ],
-        search: ''
-      }
-    },
+export default {
+  data () {
+    return {
+      headers: [
+        { text: 'First Name', value: 'firstName' },
+        { text: 'Last Name', value: 'lastName' },
+        { text: 'City', value: 'city' },
+        { text: 'State', value: 'state' },
+        { text: 'Actions', value: 'name', align:'center',  sortable: false }
+      ],
+      search: ''
+    };
+  },
 
-    computed: {
-        ...mapState('client', {
-            clients: 'clients',
-            loading: 'loading'
-        })
-    },
+  computed: {
+    ...mapState('client', {
+      clients: 'clients',
+      loading: 'loading'
+    })
+  },
 
-    methods: {
-        ...mapActions('client', {
-            loadClients: 'load',
-            editClient: 'edit',
-            newClient: 'newClient'
-        }),
+  methods: {
+    ...mapActions('client', {
+      loadClients: 'load',
+      editClient: 'edit',
+      newClient: 'newClient'
+    }),
 
-        remove(client){
+    remove(client){
 
-          this.$root.$confirmacao.open('Remove', 'Are you sure?')
-          .then((confirmed) => {
-            if(confirmed){
-              this.$store.dispatch('client/remove', client);
-            }
-          });
-        }
-    },
-
-    created(){
-      this.loadClients();
+      this.$root.$confirmacao.open('Remove', 'Are you sure?')
+        .then((confirmed) => {
+          if(confirmed){
+            this.$store.dispatch('client/remove', client);
+          }
+        });
     }
+  },
+
+  created(){
+    this.loadClients();
   }
+};
 </script>

@@ -37,5 +37,5 @@ export default {
   mounted(){
     this.$root.$confirmacao = this.$refs.dialog_confirm;
   }
-}
+};
 </script>

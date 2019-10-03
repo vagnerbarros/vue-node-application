@@ -16,42 +16,42 @@
 
 <script>
   
-  export default {
+export default {
     
-    data: () => ({
-      dialog: false,
-      resolve: null,
-      reject: null,
-      mensagem: null,
-      titulo: null,
-      options: {
-        color: 'primary',
-        width: 290
-      }
-    }),
+  data: () => ({
+    dialog: false,
+    resolve: null,
+    reject: null,
+    mensagem: null,
+    titulo: null,
+    options: {
+      color: 'primary',
+      width: 290
+    }
+  }),
 
-    methods: {
-      open(titulo, mensagem, options) {
-        this.dialog = true
-        this.titulo = titulo
-        this.mensagem = mensagem
-        this.options = Object.assign(this.options, options);
+  methods: {
+    open(titulo, mensagem, options) {
+      this.dialog = true;
+      this.titulo = titulo;
+      this.mensagem = mensagem;
+      this.options = Object.assign(this.options, options);
 
-        return new Promise((resolve, reject) => {
-          this.resolve = resolve
-          this.reject = reject
-        })
-      },
+      return new Promise((resolve, reject) => {
+        this.resolve = resolve;
+        this.reject = reject;
+      });
+    },
 
-      sim() {
-        this.resolve(true)
-        this.dialog = false
-      },
+    sim() {
+      this.resolve(true);
+      this.dialog = false;
+    },
       
-      nao() {
-        this.resolve(false)
-        this.dialog = false
-      }
+    nao() {
+      this.resolve(false);
+      this.dialog = false;
     }
   }
+};
 </script>
