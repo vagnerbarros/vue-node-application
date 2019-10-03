@@ -1,3 +1,4 @@
+const dotenv = require('dotenv').config();
 const express = require('express');
 const app = express();
 const cors = require('cors');
@@ -17,4 +18,9 @@ const clientRouter = require('./routes/ClientRouter');
 app.use(userRouter);
 app.use(clientRouter);
 
-app.listen(constants.PORT_EXPRESS);
+const API_PORT = process.env.API_PORT || 3000;
+const AMBIENTE = process.env.NODE_ENV || 'production';
+
+app.listen(API_PORT, () => {
+    console.log(`API EasyWeb em execução. \n Ambiente: ${AMBIENTE} \n PORTA: ${API_PORT}`);
+});
