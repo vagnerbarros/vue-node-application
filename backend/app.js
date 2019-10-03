@@ -18,7 +18,7 @@ const clientRouter = require('./routes/ClientRouter');
 app.use(userRouter);
 app.use(clientRouter);
 
-const API_PORT = process.env.API_PORT || 3000;
+const API_PORT = process.env.API_PORT || 7000;
 const AMBIENTE = process.env.NODE_ENV || 'production';
 
 app.listen(API_PORT, () => {
