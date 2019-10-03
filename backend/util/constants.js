@@ -11,7 +11,7 @@ if(process.env.NODE_ENV == 'test'){
     URL_MONGO = 'mongodb+srv://' + USER_MONGO + ':' + PASSWORD_MONGO + '@boleto-byao3.mongodb.net/admin';
     MONGO_OPTIONS = {user: USER_MONGO, pass: PASSWORD_MONGO, dbName: 'testes', useNewUrlParser: true};
 }
-else if(process.env.NODE_ENV == 'production'){
+else{
     
     URL_MONGO = 'mongodb+srv://' + USER_MONGO + ':' + PASSWORD_MONGO + '@boleto-byao3.mongodb.net/admin';
     MONGO_OPTIONS = {user: USER_MONGO, pass: PASSWORD_MONGO, dbName: 'git-hub', useNewUrlParser: true};
